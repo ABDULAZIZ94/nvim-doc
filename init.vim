@@ -15,7 +15,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'dracula/vim'
-Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons' , {'branch': '0.3.4'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
 Plug 'leafgarland/typescript-vim'
@@ -29,10 +29,27 @@ let g:NERDTreeMinimalUI = 1
 let g:NERDTreeIgnore = []
 let g:NERDTreeStatusline = ''
 let g:NERDTreeShowHidden=1
+" loading the plugin
+let g:webdevicons_enable = 1
+" adding the flags to NERDTree
+let g:webdevicons_enable_nerdtree = 1
+" adding the column to vimfiler
+let g:webdevicons_enable_vimfiler = 1
+" adding to vim-airline's tabline
+let g:webdevicons_enable_airline_tabline = 1
+" adding to vim-airline's statusline
+let g:webdevicons_enable_airline_statusline = 1
+" ctrlp glyphs
+let g:webdevicons_enable_ctrlp = 1
+" adding to vim-startify screen
+let g:webdevicons_enable_startify = 1
+" adding to flagship's statusline
+let g:webdevicons_enable_flagship_statusline = 1
 
 nmap <silent> <C-b> :NERDTreeToggle<CR>
-"set number
-set paste
+set number
+set encoding=UTF-8
+set pastetoggle=<F2>
 if (has("termguicolors"))
 	set termguicolors
 endif
@@ -215,6 +232,8 @@ function! OpenTerminal()
 endfunction
 nnoremap <c-n> :call OpenTerminal()<CR>
 
+
+map <F3> :CocCommand git.toggleGutters<CR>
 
 " use alt+hjkl to move between split/vsplit panels
 tnoremap <A-h> <C-\><C-n><C-w>h
