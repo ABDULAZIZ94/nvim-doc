@@ -17,7 +17,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'dracula/vim'
 Plug 'ryanoasis/vim-devicons' , {'branch': '0.3.4'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-git']
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 call plug#end()
@@ -25,7 +25,7 @@ call plug#end()
 "config section
 "nerd tree
 let g:NERDTreeShowHidden = 1
-let g:NERDTreeMinimalUI = 1
+"let g:NERDTreeMinimalUI = 1
 let g:NERDTreeIgnore = []
 let g:NERDTreeStatusline = ''
 let g:NERDTreeShowHidden=1
@@ -74,6 +74,7 @@ set updatetime=300
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
+set guifont=DroidSansMono\ Nerd\ Font\ 11
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 if has("patch-8.1.1564")
@@ -232,8 +233,8 @@ function! OpenTerminal()
 endfunction
 nnoremap <c-n> :call OpenTerminal()<CR>
 
-
-map <F3> :CocCommand git.toggleGutters<CR>
+"comented out since has problem with insert mode
+"map <F3> :CocCommand git.toggleGutters<CR>
 
 " use alt+hjkl to move between split/vsplit panels
 tnoremap <A-h> <C-\><C-n><C-w>h
