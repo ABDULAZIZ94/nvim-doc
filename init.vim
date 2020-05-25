@@ -84,6 +84,16 @@ else
   set signcolumn=yes
 endif
 
+filetype plugin indent on
+set sw=2 sts=2 et
+map :%retab = <C-0>
+" show existing tab with 4 spaces width
+"set tabstop=4
+" when indenting with '>', use 4 spaces width
+"set shiftwidth=4
+" On pressing tab, insert 4 spaces
+"set expandtab
+
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
